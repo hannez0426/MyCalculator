@@ -3,6 +3,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Calculator {
+
+    private double total1 = 0.0;
+    private double total2 = 0.0;
+    private char math_operator;
     private JPanel mainCalc;
     private JTextField txtDisplay;
     private JButton btn1;
@@ -21,9 +25,15 @@ public class Calculator {
     private JButton btnDivide;
     private JButton btnMultiply;
     private JButton btnSub;
-    private JButton btnsum;
+    private JButton btnSum;
     private JButton btnEquals;
     private JButton btn0;
+
+    private void getMath_Operator (String btnText){
+        math_operator = btnText.charAt(0);
+        total1 = total1 + Double.parseDouble(txtDisplay.getText());
+        txtDisplay.setText("");
+    }
 
     public Calculator() {
         btn1.addActionListener(new ActionListener() {
@@ -114,6 +124,84 @@ public class Calculator {
                 txtDisplay.setText(btnZeroText);
             }
         });
+        btnSum.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String button_txt = btnSum.getText();
+                getMath_Operator(button_txt);
+            }
+        });
+
+        btnSub.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String button_txt = btnSub.getText();
+                getMath_Operator(button_txt);
+            }
+        });
+
+
+        btnMultiply.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String button_txt = btnMultiply.getText();
+                getMath_Operator(button_txt);
+            }
+        });
+
+
+        btnDivide.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String button_txt = btnDivide.getText();
+                getMath_Operator(button_txt);
+            }
+        });
+        btnEquals.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switch (math_operator){
+                    case '+':
+                        total2 = total1 + Double.parseDouble(txtDisplay.getText());
+                        break;
+                    case '-':
+                        total2 = total1 - Double.parseDouble(txtDisplay.getText());
+                        break;
+                    case '*':
+                        total2 = total1 * Double.parseDouble(txtDisplay.getText());
+                        break;
+                    case '/':
+                        total2 = total1 / Double.parseDouble(txtDisplay.getText());
+                        break;
+                }
+                txtDisplay.setText(Double.toString(total2));
+                total1 = 0;
+            }
+        });
+        btnC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                total2 = 0;
+                txtDisplay.setText("");
+            }
+        });
+
+
+        btnDot.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(txtDisplay.getText().equals("")){
+                    txtDisplay.setText("0.");
+                } else if (txtDisplay.getText().contains(".")){
+                    btnDot.setEnabled(false);
+                } else{
+                    String btnDotText = txtDisplay.getText() + btnDot.getText();
+                    txtDisplay.setText(btnDotText);
+                }
+                btnDot.setEnabled(true);
+            }
+        });
+
     }
 
     public static void main(String[] args) {
