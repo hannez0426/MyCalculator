@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e96e385-9a2a-415a-a8ab-ee21bdc07d98" name="Changes" comment="First Step">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.form" afterDir="false" />
+    <list default="true" id="7e96e385-9a2a-415a-a8ab-ee21bdc07d98" name="Changes" comment="math operators and cancel">
       <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +55,19 @@
       <option name="project" value="LOCAL" />
       <updated>1696321997191</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="math operators and cancel">
+      <created>1696338961878</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696338961878</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Step" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Step" />
+    <MESSAGE value="math operators and cancel" />
+    <option name="LAST_COMMIT_MESSAGE" value="math operators and cancel" />
   </component>
 </project>

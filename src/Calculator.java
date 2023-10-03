@@ -202,6 +202,19 @@ public class Calculator {
             }
         });
 
+
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtDisplay.setText(txtDisplay.getText().substring(0, txtDisplay.getText().length() - 1));
+            }
+        });
+        btnCE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtDisplay.setText("Calculating...");
+            }
+        });
     }
 
     public static void main(String[] args) {
